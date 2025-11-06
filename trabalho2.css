@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f4e1d2;
+  background: linear-gradient(135deg, #f4e1d2, #e5c7b8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@ body {
   width: 380px;
   height: 550px;
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -24,7 +24,7 @@ body {
   color: white;
   text-align: center;
   padding: 15px;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -36,6 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  scroll-behavior: smooth;
 }
 
 .message {
@@ -44,6 +45,7 @@ body {
   border-radius: 15px;
   font-size: 0.95em;
   line-height: 1.4;
+  animation: appear 0.3s ease forwards;
 }
 
 .received {
@@ -80,8 +82,14 @@ body {
   padding: 0 20px;
   cursor: pointer;
   font-weight: bold;
+  transition: background 0.2s;
 }
 
 .chat-input button:hover {
   background: #854f2e;
+}
+
+@keyframes appear {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
